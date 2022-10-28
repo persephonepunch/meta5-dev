@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html data-wf-page="605277701c86440e6ca04b63" data-wf-site="605277701c864425e8a04b62"><head><link rel="preconnect" crossorigin="true" href="https://assets.website-files.com">{%- seo seo -%}
+  <meta charset="utf-8">
+  
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <link href="/assets/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/meta5-dev.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Merriweather:300,300italic,400,400italic,700,700italic,900,900italic","Inter:100,200,300,regular,500,600,700","Noto Serif:regular","Baskervville:regular"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="{{ settings.site.favicon | default: "/assets/images/favicon.png" }}" rel="shortcut icon" type="image/x-icon">
+  <link href="{{ settings.site.apple_touch_icon | default: "/assets/images/webclip.jpg" }}" rel="apple-touch-icon">
+  <!--  UIkit CSS
+<link rel="stylesheet" href="https://meta5demo.netlify.app/static/css/uikitmeta.css" />
+<!-- UIkit JS 
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.17/dist/js/uikit-icons.min.js"></script> -->
+  <style>
+.item {display: inline-block;}
+.list {display:block !important;}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    outline: none;
+}
+.slick-slide, .slick-slide *{ outline: none !important; }
+</style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+// when document is fully loaded
+$( document ).ready(function() {
+$('.list').slick({
+  dots: false,
+  speed: 1000,
+  infinite: false,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  arrows: false,
+  touchThreshold:300,
+  responsive: [
+    {
+      // tablet
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      // mobile portrait
+      breakpoint: 479,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+$('.slider-prev').click(function(){
+    $(this).closest('.section').find(".list").slick('slickPrev');
+});
+$('.slider-next').click(function(){
+    $(this).closest('.section').find(".list").slick('slickNext');
+});
+});
+</script>
+{{ settings.site.header_additional_content }}{%- include "partials/_site-css-variables" -%}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><style>.w-video.w-embed {
+            aspect-ratio: 16 / 9;
+        }</style></head>
+<body class="body">
+  <div class="main-wrapper">
+    <div class="sliderwrapper">
+      <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+        <a href="{{ links.2f }}" aria-current="page" class="w-nav-brand w--current"><img src="{{ images.d52a897.url }}" loading="lazy" width="212" alt="{{ images.d52a897.alt | trim | escape }}" class="image-17"></a>
+        <nav role="navigation" class="nav-menu nav-menu-2 w-nav-menu">
+          <a href="{{ links.2f }}" aria-current="page" class="links w-nav-link w--current">{{ texts.30f4df }}</a>
+          <a href="{{ links.55b8e8be }}" class="links w-nav-link">{{ texts.585238d }}</a>
+          <a href="{{ links.-61c7d935 }}" class="links w-nav-link">{{ texts.-3b439de6 }}</a>
+          <a data-w-id="5ea69f3d-2f34-cbd9-2822-6311e5c64fc9" href="{{ links.23 }}" class="links modal w-inline-block">
+            <div class="links">{{ texts.8556e9e }}</div>
+          </a>
+        </nav>
+        <div class="menu-button w-nav-button">
+          <div class="icon w-icon-nav-menu"></div>
+        </div>
+      </div>
+      <div id="MODAL" class="headercontent">
+        <div class="navfull">
+          <div class="background-click">
+            <div class="formfull">
+              <div class="contact-form">
+                <div class="contacthead"><img src="{{ images.-7ccaf9cc.url }}" loading="lazy" width="100" alt="{{ images.-7ccaf9cc.alt | trim | escape }}" class="image"></div>
+                <div data-w-id="fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc84" class="close"><img src="{{ images.241ffa94.url }}" loading="lazy" alt="{{ images.241ffa94.alt | trim | escape }}"></div>
+                <div class="div-block-49">
+                  <div id="Subscribe" class="form-block w-form">
+                    <form id="wf-form-Subscribe" name="wf-form-Subscribe" data-name="subscribe" action="https://app.us1.list-manage.com/subscribe/post?u=fdac0cf19eb558af4eb079699&amp;amp;id=38d710931e" method="post" class="form-2" data-ajax="true">
+                      <div class="w-layout-grid formwrapper">
+                        <h2 class="heading-43">{{ texts.-5bfbfdf2 }}</h2>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc8a-bbe3fc7d" class="formdiv double"><label for="NAME-5" class="field-label">{{ texts.24eeab }}</label><input type="text" class="text-field w-input" maxlength="256" name="NAME-5" data-name="NAME 5" placeholder="" id="NAME-5"></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc8e-bbe3fc7d" class="formdiv"><label for="EMAIL-5" class="field-label">{{ texts.-2b7010d0 }}</label><input type="email" class="text-field w-input" maxlength="256" name="EMAIL-5" data-name="EMAIL 5" placeholder="" id="EMAIL-5" required=""></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc92-bbe3fc7d" class="formdiv"><label for="PHONE-2" class="field-label">{{ texts.65b3d6e }}</label><input type="tel" class="text-field w-input" maxlength="256" name="PHONE-2" data-name="PHONE 2" placeholder="" id="PHONE-2" required=""></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc96-bbe3fc7d" class="formdiv"><label for="NAME-6" class="field-label"> </label><label for="COMPANY-2" class="field-label">{{ texts.-64202ba3 }}</label><input type="text" class="text-field w-input" maxlength="256" name="COMPANY-2" data-name="COMPANY 2" placeholder="" id="COMPANY-2"></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc9c-bbe3fc7d" class="formdiv"><label for="TITLE-2" class="field-label">{{ texts.4c22a38 }}</label><input type="text" class="text-field w-input" maxlength="256" name="TITLE-2" data-name="TITLE 2" placeholder="" id="TITLE-2"></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fca0-bbe3fc7d" class="formdiv double"><label for="PROJECT-2" class="field-label">{{ texts.-3f977683 }}</label><input type="text" class="text-field w-input" maxlength="256" name="PROJECT-2" data-name="PROJECT 2" placeholder="" id="PROJECT-2"></div>
+                        <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fca4-bbe3fc7d" class="formdiv double"><label for="INTEREST-2" class="field-label">{{ texts.25da0b4a }}</label><input type="text" class="text-field w-input" maxlength="256" name="INTEREST-2" data-name="INTEREST 2" placeholder="" id="INTEREST-2">
+                          <div class="div-block-50"><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button">
+                            <div class="bottomcontact"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="success-message w-form-done">
+                      <div class="text-block-16">{{ texts.5a0ea5a1 }}</div>
+                    </div>
+                    <div class="error-message w-form-fail">
+                      <div>{{ texts.-7c112e99 }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contactcontainer">
+                <div class="w-layout-grid footergrid">
+                  <div class="contacthead">
+                    <h2 class="contacts"><strong class="bold-text">{{ texts.46537db4 }}<br></strong></h2>
+                    <a href="{{ links.5247924a }}" class="w-inline-block">
+                      <div class="text-block-17"><strong>{{ texts.200d }}</strong>{{ texts.7c64b1ef }}</div>
+                    </a>
+                    <a id="General-Phone" href="{{ links.-3e3436db }}" class="w-inline-block">
+                      <div>{{ texts.2a0da38b }}</div>
+                    </a>
+                  </div>
+                  <div class="contacthead">
+                    <h2 class="contacts"><strong class="bold-text">{{ texts.4c749326 }}<br></strong></h2>
+                    <a href="{{ links.-6ba93d27 }}" class="w-inline-block">
+                      <div class="text-block-17"><strong class="bold-text-2">{{ texts.682490c }}</strong>{{ texts.35de2f5d }}</div>
+                    </a>
+                    <a id="General-Phone" href="{{ links.-3e3436da }}" class="w-inline-block">
+                      <div>{{ texts.2a0da38c }}</div>
+                    </a>
+                  </div>
+                  <div class="contacthead">
+                    <h2 class="contacts"><strong class="bold-text">{{ texts.3e5b85cc }}<br></strong></h2>
+                    <a href="{{ links.5f9735ff }}" class="w-inline-block">
+                      <div class="text-block-17"><strong class="bold-text-3">{{ texts.364296 }}</strong>{{ texts.35de2f5d }}</div>
+                    </a>
+                    <a id="General-Phone" href="{{ links.-7ef87037 }}" class="link-block w-inline-block">
+                      <div>{{ texts.-439841cf }}</div>
+                      <div class="techphone">{{ texts.-7be26d36 }}</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="aa-section1 home">
+        <div class="w-layout-grid gridheadline">
+          <div class="partners w-clearfix">
+            <h1 class="headingside">{{ texts.497f9b62 }}<br>{{ texts.3ea6c4eb }}</h1>
+          </div>
+          <div id="w-node-_20e4be9c-a3b1-ce32-50f1-cb00290a35e2-6ca04b63">
+            <div class="bluetext hero">{{ texts.-365bcab2 }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-section">
+        <div class="hh-feature3-wrapper underline">
+          <div class="inset second">
+            <div class="_00subhead"><strong class="bluetext large">{{ texts.2b6cf603 }}</strong></div>
+          </div>
+          <div class="w-layout-grid process">
+            <div class="process-class">
+              <div class="w-layout-grid grid-15">
+                <div class="circleholder"></div>
+                <div class="processcard">
+                  <h3 class="heading-45">{{ texts.38b7655d }}</h3>
+                  <div class="text-block-9">{{ texts.69e0ce9c }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="process-class">
+              <div class="w-layout-grid grid-15">
+                <div class="circleholder time"></div>
+                <div class="processcard">
+                  <h3 class="heading-45">{{ texts.55cc7534 }}</h3>
+                  <div class="text-block-9">{{ texts.-2c281e4c }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="process-class">
+              <div class="w-layout-grid grid-15">
+                <div class="circleholder simple"></div>
+                <div class="processcard">
+                  <h3 class="heading-45">{{ texts.-509a5f04 }}</h3>
+                  <div class="text-block-9">{{ texts.18ffea0d }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="process-class">
+              <div class="w-layout-grid grid-15">
+                <div class="circleholder insight"></div>
+                <div class="processcard">
+                  <h3 class="heading-45">{{ texts.6854fdf }}</h3>
+                  <div class="text-block-9">{{ texts.3fd8793c }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inset home">
+          <div class="w-layout-grid gridheadline">
+            <div class="partners w-clearfix">
+              <h1 class="headingside">{{ texts.61c31691 }}</h1>
+            </div>
+            <div id="w-node-_22909604-df35-3d15-662c-9e32e9c79a37-6ca04b63">
+              <div class="bluetext">{{ texts.27f81a5 }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="divtop">
+          <div>
+            <div class="qtdiv short">
+              <div data-w-id="6625a492-b596-a59a-8dcc-c1cc55ad39dd" class="q-wrapper"><img src="{{ images.341e17b0.url }}" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" alt="{{ images.341e17b0.alt | trim | escape }}" class="image-4">
+                <div class="q-overlay">
+                  <div style="opacity:1" class="q-headline">
+                    <div class="q-paneltext">{{ texts.34b54097 }}</div>
+                  </div>
+                  <div style="opacity:0" class="q-body-text">
+                    <h4 class="heading-32">{{ texts.73430ea7 }}<br></h4>
+                    <div class="qbodytext">{{ texts.1cb1699f }}<br></div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-id="6625a492-b596-a59a-8dcc-c1cc55ad39ea" class="q-wrapper"><img src="{{ images.7ba57ac4.url }}" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" alt="{{ images.7ba57ac4.alt | trim | escape }}" class="image-4">
+                <div class="q-overlay">
+                  <div style="opacity:1" class="q-headline">
+                    <div class="q-paneltext">{{ texts.-559bbb20 }}</div>
+                  </div>
+                  <div style="opacity:0" class="q-body-text">
+                    <h4 class="heading-32">{{ texts.6e38e562 }}<br></h4>
+                    <div class="qbodytext">{{ texts.318e5c3c }}<br></div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-id="6625a492-b596-a59a-8dcc-c1cc55ad39f7" class="q-wrapper"><img src="{{ images.-79eef0f0.url }}" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" alt="{{ images.-79eef0f0.alt | trim | escape }}" class="image-4">
+                <div class="q-overlay">
+                  <div style="opacity:1" class="q-headline">
+                    <div class="q-paneltext">{{ texts.1c9d05e2 }}</div>
+                  </div>
+                  <div style="opacity:0" class="q-body-text">
+                    <h4 class="heading-32">{{ texts.3cac61b0 }}<br></h4>
+                    <div class="qbodytext">{{ texts.74a2bcce }}<br></div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-id="6625a492-b596-a59a-8dcc-c1cc55ad3a11" class="q-wrapper"><img src="{{ images.63483e44.url }}" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" alt="{{ images.63483e44.alt | trim | escape }}" class="image-4">
+                <div class="q-overlay">
+                  <div style="opacity:1" class="q-headline">
+                    <div class="q-paneltext">{{ texts.67fe93cb }}</div>
+                  </div>
+                  <div style="opacity:0" class="q-body-text">
+                    <h4 class="heading-32">{{ texts.34891c01 }}<br></h4>
+                    <div class="qbodytext">{{ texts.490e93d3 }}<em>{{ texts.-212f670 }}</em>{{ texts.1292601c }}<br></div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-id="6625a492-b596-a59a-8dcc-c1cc55ad3a04" class="q-wrapper"><img src="{{ images.-2d0a3921.url }}" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" alt="{{ images.-2d0a3921.alt | trim | escape }}" class="image-4">
+                <div class="q-overlay">
+                  <div style="opacity:1" class="q-headline">
+                    <div class="q-paneltext">{{ texts.-46aafb41 }}</div>
+                  </div>
+                  <div style="opacity:0" class="q-body-text">
+                    <h4 class="heading-32">{{ texts.-63937924 }}<br></h4>
+                    <div class="qbodytext">{{ texts.6fd25182 }}<br></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="homewrapper _60left">
+      <div class="slick w-clearfix">
+        <h1 class="headingside">{{ texts.-1c941f22 }}</h1>
+        <div class="arrow_contain">
+          <a id="slider-next" href="{{ links.23 }}" class="prev w-inline-block"><img src="{{ images.-6612688f.url }}" loading="lazy" width="50" height="" alt="{{ images.-6612688f.alt | trim | escape }}" class="arrow_image"></a>
+          <a id="slider-next" href="{{ links.23 }}" class="next w-inline-block"><img src="{{ images.-1ef44162.url }}" loading="lazy" width="50" height="" alt="{{ images.-1ef44162.alt | trim | escape }}" class="arrow_image"></a>
+        </div>
+      </div>
+      <div class="slider">
+        <div class="slick-wrap">
+          {%- assign collection = collections.features | sort: "created-on" -%}<div class="wrapper w-dyn-list">
+            {%- unless collection.length == 0 -%}<section id="slider-id" role="list" class="list w-dyn-items">
+              {%- for item in collection -%}<div role="listitem" class="item w-dyn-item">
+                <div class="card">
+                  <div class="text-block-21">{{ item.data.title }}</div>
+                  <div class="text-block-22">{{ item.data.f_feature }}</div>
+                </div>
+              </div>{%- endfor -%}
+            </section>{%- endunless -%}
+            {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+              <div>{{ texts.3d503d2b }}</div>
+            </div>{%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-3 wf-section">
+      <div class="keyfeaturessection">
+        <div class="w-layout-grid gridheadline">
+          <div class="w-clearfix">
+            <h1 class="headingside">{{ texts.-7d660f48 }}</h1>
+          </div>
+          <div id="w-node-_4e7b4ae5-3a1c-9e49-c25b-db5b025a6338-6ca04b63" class="sidebartext">
+            <div class="bluetext">{{ texts.4c70ec2e }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="inset"></div>
+      <div class="marquee-wrapper">
+        <div class="marquee">
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.33c0a358 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.661d8788 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.b7d90d7 }}<br>{{ texts.6bdf1b62 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-6c8bc9ef }}</h5>
+            <div class="navfull">
+              <div class="background-click">
+                <div class="formfull">
+                  <div class="contact-form">
+                    <div class="contacthead"><img src="{{ images.-7ccaf9cc.url }}" loading="lazy" width="100" alt="{{ images.-7ccaf9cc.alt | trim | escape }}" class="image"></div>
+                    <div data-w-id="fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc84" class="close"><img src="{{ images.241ffa94.url }}" loading="lazy" alt="{{ images.241ffa94.alt | trim | escape }}"></div>
+                    <div class="div-block-49">
+                      <div id="Subscribe" class="form-block w-form">
+                        <form id="wf-form-Subscribe" name="wf-form-Subscribe" data-name="subscribe" action="https://app.us1.list-manage.com/subscribe/post?u=fdac0cf19eb558af4eb079699&amp;amp;id=38d710931e" method="post" class="form-2" data-ajax="true">
+                          <div class="w-layout-grid formwrapper">
+                            <h2 class="heading-43">{{ texts.-5bfbfdf2 }}</h2>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc8a-bbe3fc7d" class="formdiv double"><label for="NAME-5" class="field-label">{{ texts.24eeab }}</label><input type="text" class="text-field w-input" maxlength="256" name="NAME-5" data-name="NAME 5" placeholder="" id="NAME-5"></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc8e-bbe3fc7d" class="formdiv"><label for="EMAIL-5" class="field-label">{{ texts.-2b7010d0 }}</label><input type="email" class="text-field w-input" maxlength="256" name="EMAIL-5" data-name="EMAIL 5" placeholder="" id="EMAIL-5" required=""></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc92-bbe3fc7d" class="formdiv"><label for="PHONE-2" class="field-label">{{ texts.65b3d6e }}</label><input type="tel" class="text-field w-input" maxlength="256" name="PHONE-2" data-name="PHONE 2" placeholder="" id="PHONE-2" required=""></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc96-bbe3fc7d" class="formdiv"><label for="NAME-6" class="field-label"> </label><label for="COMPANY-2" class="field-label">{{ texts.-64202ba3 }}</label><input type="text" class="text-field w-input" maxlength="256" name="COMPANY-2" data-name="COMPANY 2" placeholder="" id="COMPANY-2"></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fc9c-bbe3fc7d" class="formdiv"><label for="TITLE-2" class="field-label">{{ texts.4c22a38 }}</label><input type="text" class="text-field w-input" maxlength="256" name="TITLE-2" data-name="TITLE 2" placeholder="" id="TITLE-2"></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fca0-bbe3fc7d" class="formdiv double"><label for="PROJECT-2" class="field-label">{{ texts.-3f977683 }}</label><input type="text" class="text-field w-input" maxlength="256" name="PROJECT-2" data-name="PROJECT 2" placeholder="" id="PROJECT-2"></div>
+                            <div id="w-node-fac3bb7c-4ccc-fb84-dbab-dbf4bbe3fca4-bbe3fc7d" class="formdiv double"><label for="INTEREST-2" class="field-label">{{ texts.25da0b4a }}</label><input type="text" class="text-field w-input" maxlength="256" name="INTEREST-2" data-name="INTEREST 2" placeholder="" id="INTEREST-2">
+                              <div class="div-block-50"><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button">
+                                <div class="bottomcontact"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="success-message w-form-done">
+                          <div class="text-block-16">{{ texts.5a0ea5a1 }}</div>
+                        </div>
+                        <div class="error-message w-form-fail">
+                          <div>{{ texts.-7c112e99 }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contactcontainer">
+                    <div class="w-layout-grid footergrid">
+                      <div class="contacthead">
+                        <h2 class="contacts"><strong class="bold-text">{{ texts.46537db4 }}<br></strong></h2>
+                        <a href="{{ links.5247924a }}" class="w-inline-block">
+                          <div class="text-block-17"><strong>{{ texts.200d }}</strong>{{ texts.7c64b1ef }}</div>
+                        </a>
+                        <a id="General-Phone" href="{{ links.-3e3436db }}" class="w-inline-block">
+                          <div>{{ texts.2a0da38b }}</div>
+                        </a>
+                      </div>
+                      <div class="contacthead">
+                        <h2 class="contacts"><strong class="bold-text">{{ texts.4c749326 }}<br></strong></h2>
+                        <a href="{{ links.-6ba93d27 }}" class="w-inline-block">
+                          <div class="text-block-17"><strong class="bold-text-2">{{ texts.682490c }}</strong>{{ texts.35de2f5d }}</div>
+                        </a>
+                        <a id="General-Phone" href="{{ links.-3e3436da }}" class="w-inline-block">
+                          <div>{{ texts.2a0da38c }}</div>
+                        </a>
+                      </div>
+                      <div class="contacthead">
+                        <h2 class="contacts"><strong class="bold-text">{{ texts.3e5b85cc }}<br></strong></h2>
+                        <a href="{{ links.5f9735ff }}" class="w-inline-block">
+                          <div class="text-block-17"><strong class="bold-text-3">{{ texts.364296 }}</strong>{{ texts.35de2f5d }}</div>
+                        </a>
+                        <a id="General-Phone" href="{{ links.-7ef87037 }}" class="link-block w-inline-block">
+                          <div>{{ texts.-439841cf }}</div>
+                          <div class="techphone">{{ texts.-7be26d36 }}</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-530b3473 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-233ef5a }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.1fed0ec2 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.46c7fc4 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-42f7409d }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-6e4d22dd }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-5f2c8897 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.12b9612c }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.4cf41a7 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.374a218c }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-42872916 }}</h5>
+          </div>
+          <div></div>
+        </div>
+        <div class="marquee">
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.33c0a358 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.661d8788 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.b7d90d7 }}<br>{{ texts.6bdf1b62 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-6c8bc9ef }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-530b3473 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-233ef5a }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.1fed0ec2 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.46c7fc4 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-42f7409d }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-6e4d22dd }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-5f2c8897 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.12b9612c }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.4cf41a7 }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.374a218c }}</h5>
+          </div>
+          <div class="industry">
+            <h5 class="heading-49">{{ texts.-42872916 }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logoswrapper">
+      <div class="w-layout-grid gridheadline">
+        <div class="_60gap w-clearfix">
+          <h1 class="headingside white">{{ texts.46debcab }}</h1>
+        </div>
+        <div class="hh-companies-wrapper">
+          <div class="logo-container">
+            {%- assign collection = collections.companies | sort: "title" -%}<div collection="Companies" class="collection-list-wrapper w-dyn-list">
+              {%- unless collection.length == 0 -%}<div role="list" class="collection-list-3 w-dyn-items">
+                {%- for item in collection -%}<div id="w-node-_34eed4b3-ae75-3df2-9e0a-0b1810922d48-6ca04b63" role="listitem" class="collection-item w-dyn-item">
+                  <div class="div-block-71"><img src="{{ item.data.f_logo.url }}" loading="lazy" alt="{{ item.data.f_logo.alt }}" class="image-18"></div>
+                </div>{%- endfor -%}
+              </div>{%- endunless -%}
+              {%- if collection.length == 0 -%}<div class="w-dyn-empty">
+                <div>{{ texts.3d503d2b }}</div>
+              </div>{%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hh-form1">
+      <div class="headlinewhite w-clearfix">
+        <h1 class="headingside white">{{ texts.38b72420 }}<br>{{ texts.e9e }}</h1>
+      </div>
+      <div class="w-layout-grid footergrid">
+        <div class="contacthead">
+          <h2 class="contacts"><strong class="bold-text">{{ texts.46537db4 }}<br></strong></h2>
+          <a href="{{ links.5247924a }}" class="w-inline-block">
+            <div class="text-block-17"><strong>{{ texts.200d }}</strong>{{ texts.7c64b1ef }}</div>
+          </a>
+          <a id="General-Phone" href="{{ links.-3e3436db }}" class="w-inline-block">
+            <div>{{ texts.2a0da38b }}</div>
+          </a>
+        </div>
+        <div class="contacthead">
+          <h2 class="contacts"><strong class="bold-text">{{ texts.4c749326 }}<br></strong></h2>
+          <a href="{{ links.-6ba93d27 }}" class="w-inline-block">
+            <div class="text-block-17"><strong class="bold-text-2">{{ texts.682490c }}</strong>{{ texts.35de2f5d }}</div>
+          </a>
+          <a id="General-Phone" href="{{ links.-3e3436da }}" class="w-inline-block">
+            <div>{{ texts.2a0da38c }}</div>
+          </a>
+        </div>
+        <div class="contacthead">
+          <h2 class="contacts"><strong class="bold-text">{{ texts.3e5b85cc }}<br></strong></h2>
+          <a href="{{ links.5f9735ff }}" class="w-inline-block">
+            <div class="text-block-17"><strong class="bold-text-3">{{ texts.364296 }}</strong>{{ texts.35de2f5d }}</div>
+          </a>
+          <a id="General-Phone" href="{{ links.-7ef87037 }}" class="link-block w-inline-block">
+            <div>{{ texts.-439841cf }}</div>
+            <div class="techphone">{{ texts.-7be26d36 }}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div tou="/utility/terms-of-use" class="footerwrapper">
+      <div class="footerlinks">
+        <div class="div-block-77">
+          <a href="{{ links.55b8e8be }}" class="linkfooter w-inline-block">
+            <div class="footertext">{{ texts.645efc51 }}</div>
+          </a>
+          <a href="{{ links.-61c7d935 }}" class="linkfooter w-inline-block">
+            <div class="footertext">{{ texts.3c2e81fa }}</div>
+          </a>
+          <a href="{{ links.616b6b11 }}" class="linkfooter w-inline-block">
+            <div class="footertext">{{ texts.7397cc93 }}</div>
+          </a>
+          <a privacy="Utility/privacy-policy" href="{{ links.c5eceb7 }}" class="linkfooter w-inline-block">
+            <div class="text-block-24">{{ texts.-3fbde6f6 }}</div>
+          </a>
+          <a terms="utility/terms-of-use" href="{{ links.23 }}" class="linkfooter w-inline-block">
+            <div class="text-block-24">{{ texts.38622077 }}</div>
+          </a>
+        </div>
+        <a data-w-id="0a0605b0-3589-62a1-40c8-9e60c3585fc7" href="{{ links.23 }}" class="button w-button">{{ texts.-5bfbfdf2 }}</a>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="/assets/js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <style>
+.item {display: inline-block;}
+.list {display:block !important;}
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus
+{
+    outline: none;
+}
+.slick-slide, .slick-slide *{ outline: none !important; }
+</style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+// when document is fully loaded
+$( document ).ready(function() {
+$('.list').slick({
+  dots: false,
+  autoplay: true,
+  speed: 1000,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  pauseOnFocus: true,
+nextArrow: $('.next'),
+prevArrow: $('.prev'),
+  touchThreshold:300,
+  responsive: [
+    {
+      // tablet
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      // mobile portrait
+      breakpoint: 479,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+});
+</script>
+
+<script src="/assets/js/udesly-11ty.min.js" async="" defer=""></script>{{ settings.site.footer_additional_content }}<script>window.netlifyIdentity&&window.netlifyIdentity.on("init",a=>{a||window.netlifyIdentity.on("login",()=>{document.location.href="/admin/"})});</script></body></html>

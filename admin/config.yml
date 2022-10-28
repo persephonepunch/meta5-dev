@@ -1,0 +1,2524 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: utility
+    label: Utilities
+    folder: cms/utility
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Utility Content
+        name: body
+        widget: markdown
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: utility
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[utility].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: features
+    label: Features
+    folder: cms/features
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_feature
+        label: feature
+        widget: string
+        required: false
+      - hint: ''
+        name: f_icon
+        label: icon
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_icon-hyphen
+        label: icon-hyphen
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: features
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[features].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: case_studies
+    label: Case Studies
+    folder: cms/case-studies
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_category
+        label: Category
+        widget: string
+        required: false
+      - hint: ''
+        name: f_icon-class-2
+        label: Icon Class
+        widget: string
+        required: false
+      - hint: ''
+        name: f_visible
+        label: Visible
+        widget: boolean
+        required: false
+      - hint: ''
+        name: f_case-description
+        label: case-description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_case-challenge
+        label: case-challenge
+        widget: string
+        required: false
+      - hint: ''
+        name: f_case-solution
+        label: case-solution
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: case-studies
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[case-studies].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: companies
+    label: Companies
+    folder: cms/companies
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_logo
+        label: Logo
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: companies
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[companies].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: home, key: 30f4df'
+            label: Text
+            name: 30f4df
+            widget: string
+          - hint: 'Original text: about, key: 585238d'
+            label: Text
+            name: 585238d
+            widget: string
+          - hint: 'Original text: solutions, key: -3b439de6'
+            label: Text
+            name: '-3b439de6'
+            widget: string
+          - hint: 'Original text: contact us, key: 8556e9e'
+            label: Text
+            name: 8556e9e
+            widget: string
+          - hint: 'Original text: get in touch, key: -5bfbfdf2'
+            label: Text
+            name: '-5bfbfdf2'
+            widget: string
+          - hint: 'Original text: Name, key: 24eeab'
+            label: Text
+            name: 24eeab
+            widget: string
+          - hint: 'Original text: Email Address, key: -2b7010d0'
+            label: Text
+            name: '-2b7010d0'
+            widget: string
+          - hint: 'Original text: phone, key: 65b3d6e'
+            label: Text
+            name: 65b3d6e
+            widget: string
+          - hint: 'Original text: Company, key: -64202ba3'
+            label: Text
+            name: '-64202ba3'
+            widget: string
+          - hint: 'Original text: TITLE, key: 4c22a38'
+            label: Text
+            name: 4c22a38
+            widget: string
+          - hint: 'Original text: PROJECT Need, key: -3f977683'
+            label: Text
+            name: '-3f977683'
+            widget: string
+          - hint: 'Original text: Interest, key: 25da0b4a'
+            label: Text
+            name: 25da0b4a
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: General Information, key: 46537db4'
+            label: Text
+            name: 46537db4
+            widget: string
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
+          - hint: 'Original text: info@meta5.com , key: 7c64b1ef'
+            label: Text
+            name: 7c64b1ef
+            widget: string
+          - hint: 'Original text: 631-587-6800 x10, key: 2a0da38b'
+            label: Text
+            name: 2a0da38b
+            widget: string
+          - hint: 'Original text: Sales Department, key: 4c749326'
+            label: Text
+            name: 4c749326
+            widget: string
+          - hint: 'Original text: sales, key: 682490c'
+            label: Text
+            name: 682490c
+            widget: string
+          - hint: 'Original text: @meta5.com , key: 35de2f5d'
+            label: Text
+            name: 35de2f5d
+            widget: string
+          - hint: 'Original text: 631-587-6800 x11, key: 2a0da38c'
+            label: Text
+            name: 2a0da38c
+            widget: string
+          - hint: 'Original text: Technical Support, key: 3e5b85cc'
+            label: Text
+            name: 3e5b85cc
+            widget: string
+          - hint: 'Original text: tech, key: 364296'
+            label: Text
+            name: '364296'
+            widget: string
+          - hint: 'Original text: Toll Free, key: -439841cf'
+            label: Text
+            name: '-439841cf'
+            widget: string
+          - hint: 'Original text: 866-638-2555, key: -7be26d36'
+            label: Text
+            name: '-7be26d36'
+            widget: string
+          - hint: 'Original text: welcome, key: 497f9b62'
+            label: Text
+            name: 497f9b62
+            widget: string
+          - hint: 'Original text: to meta5, key: 3ea6c4eb'
+            label: Text
+            name: 3ea6c4eb
+            widget: string
+          - hint: >-
+              Original text: meta5 unites all of your data assets within one
+              easy-to-use platform. It integrates with the programs and
+              applications you already use, without writing a single line of
+              code—driving more opportunities to leverage and gather insights
+              for business intelligence., key: -365bcab2
+            label: Text
+            name: '-365bcab2'
+            widget: text
+          - hint: >-
+              Original text: From integrating and combining data from disparate
+              sources to automating, managing, auditing and distributing
+              reports, meta5 helps you do it all. , key: 2b6cf603
+            label: Text
+            name: 2b6cf603
+            widget: text
+          - hint: 'Original text: control, key: 38b7655d'
+            label: Text
+            name: 38b7655d
+            widget: string
+          - hint: >-
+              Original text: any kind of data from anywhere, so you spend less
+              time managing it—and more time making strategic decisions from
+              it., key: 69e0ce9c
+            label: Text
+            name: 69e0ce9c
+            widget: text
+          - hint: 'Original text: automate, key: 55cc7534'
+            label: Text
+            name: 55cc7534
+            widget: string
+          - hint: >-
+              Original text: the time-consuming transformation of data needed
+              for reporting and distribution, getting the job done in a fraction
+              of the time., key: -2c281e4c
+            label: Text
+            name: '-2c281e4c'
+            widget: text
+          - hint: 'Original text: create, key: -509a5f04'
+            label: Text
+            name: '-509a5f04'
+            widget: string
+          - hint: >-
+              Original text: your own custom applications using our simple
+              drag-and-drop interface and our patented CAPSULE® technology.,
+              key: 18ffea0d
+            label: Text
+            name: 18ffea0d
+            widget: text
+          - hint: 'Original text: share, key: 6854fdf'
+            label: Text
+            name: 6854fdf
+            widget: string
+          - hint: >-
+              Original text: insights across teams to accelerate your business
+              KPIs, ROIs and bottom line from end-to-end., key: 3fd8793c
+            label: Text
+            name: 3fd8793c
+            widget: text
+          - hint: 'Original text: our difference, key: 61c31691'
+            label: Text
+            name: 61c31691
+            widget: string
+          - hint: >-
+              Original text: meta5 makes the decision-making process easier,
+              more productive, cost-effective and scalable vs. traditional
+              stand-alone Business Intelligence (BI) tools., key: 27f81a5
+            label: Text
+            name: 27f81a5
+            widget: text
+          - hint: 'Original text: seamless, key: 34b54097'
+            label: Text
+            name: 34b54097
+            widget: string
+          - hint: 'Original text: Seamless Data Integration, key: 73430ea7'
+            label: Text
+            name: 73430ea7
+            widget: string
+          - hint: >-
+              Original text: meta5 leverages your existing end-user software and
+              application environments so your team can compile data from
+              disparate resources—and create effective reports within minutes.,
+              key: 1cb1699f
+            label: Text
+            name: 1cb1699f
+            widget: text
+          - hint: 'Original text: excellence, key: -559bbb20'
+            label: Text
+            name: '-559bbb20'
+            widget: string
+          - hint: 'Original text: Microsoft Excel Superiority, key: 6e38e562'
+            label: Text
+            name: 6e38e562
+            widget: string
+          - hint: >-
+              Original text: meta5 is simply the best Excel integration and
+              Office automation tool in the industry. We eliminate the cutting
+              and pasting typically required to reconstruct your sophisticated
+              Excel and Word templates, and deliver the power of macros without
+              writing any code., key: 318e5c3c
+            label: Text
+            name: 318e5c3c
+            widget: text
+          - hint: 'Original text: governance, key: 1c9d05e2'
+            label: Text
+            name: 1c9d05e2
+            widget: string
+          - hint: 'Original text: Transparent Governance, key: 3cac61b0'
+            label: Text
+            name: 3cac61b0
+            widget: string
+          - hint: >-
+              Original text: meta5 automatically audits, manages, and documents
+              your data—so you can feel confident in reproducing and tracking
+              any fact on any report to its source., key: 74a2bcce
+            label: Text
+            name: 74a2bcce
+            widget: text
+          - hint: 'Original text: flexible, key: 67fe93cb'
+            label: Text
+            name: 67fe93cb
+            widget: string
+          - hint: 'Original text: Efficient and Flexible Reporting, key: 34891c01'
+            label: Text
+            name: 34891c01
+            widget: string
+          - hint: >-
+              Original text: meta5 delivers superior business process automation
+              that manages, creates and delivers reports , key: 490e93d3
+            label: Text
+            name: 490e93d3
+            widget: text
+          - hint: 'Original text: five times faster than, key: -212f670'
+            label: Text
+            name: '-212f670'
+            widget: string
+          - hint: >-
+              Original text:  other code-based solutions, and makes it easy to
+              update and modify them at will to create even more compelling
+              insights and analysis., key: 1292601c
+            label: Text
+            name: 1292601c
+            widget: text
+          - hint: 'Original text: code free, key: -46aafb41'
+            label: Text
+            name: '-46aafb41'
+            widget: string
+          - hint: 'Original text: Code and Macro Free, key: -63937924'
+            label: Text
+            name: '-63937924'
+            widget: string
+          - hint: >-
+              Original text: meta5’s CAPSULE® Technology helps build reports via
+              clear, simple visual icons, giving your data analysts and account
+              managers the power of being a programmer without the need to write
+              code., key: 6fd25182
+            label: Text
+            name: 6fd25182
+            widget: text
+          - hint: 'Original text: key features, key: -1c941f22'
+            label: Text
+            name: '-1c941f22'
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: meta5 users, key: -7d660f48'
+            label: Text
+            name: '-7d660f48'
+            widget: string
+          - hint: >-
+              Original text: From Fortune 500 companies and enterprise clients
+              to small businesses and startups, meta5 works for everyone who
+              uses data—and we've worked with them all., key: 4c70ec2e
+            label: Text
+            name: 4c70ec2e
+            widget: text
+          - hint: 'Original text: CPG/FMGC, key: 33c0a358'
+            label: Text
+            name: 33c0a358
+            widget: string
+          - hint: 'Original text: Education, key: 661d8788'
+            label: Text
+            name: 661d8788
+            widget: string
+          - hint: 'Original text: Financial , key: b7d90d7'
+            label: Text
+            name: b7d90d7
+            widget: string
+          - hint: 'Original text: Services , key: 6bdf1b62'
+            label: Text
+            name: 6bdf1b62
+            widget: string
+          - hint: 'Original text: Government, key: -6c8bc9ef'
+            label: Text
+            name: '-6c8bc9ef'
+            widget: string
+          - hint: 'Original text: Healthcare, key: -530b3473'
+            label: Text
+            name: '-530b3473'
+            widget: string
+          - hint: 'Original text: Insurance , key: -233ef5a'
+            label: Text
+            name: '-233ef5a'
+            widget: string
+          - hint: 'Original text: Manufacturing , key: 1fed0ec2'
+            label: Text
+            name: 1fed0ec2
+            widget: string
+          - hint: 'Original text: Media, key: 46c7fc4'
+            label: Text
+            name: 46c7fc4
+            widget: string
+          - hint: 'Original text: Pharmaceutical, key: -42f7409d'
+            label: Text
+            name: '-42f7409d'
+            widget: string
+          - hint: 'Original text: Retail, key: -6e4d22dd'
+            label: Text
+            name: '-6e4d22dd'
+            widget: string
+          - hint: 'Original text: SEO/SEM, key: -5f2c8897'
+            label: Text
+            name: '-5f2c8897'
+            widget: string
+          - hint: 'Original text: Technology, key: 12b9612c'
+            label: Text
+            name: 12b9612c
+            widget: string
+          - hint: 'Original text: Telco, key: 4cf41a7'
+            label: Text
+            name: 4cf41a7
+            widget: string
+          - hint: 'Original text: Transportation, key: 374a218c'
+            label: Text
+            name: 374a218c
+            widget: string
+          - hint: 'Original text: Utilities, key: -42872916'
+            label: Text
+            name: '-42872916'
+            widget: string
+          - hint: 'Original text: partners, key: 46debcab'
+            label: Text
+            name: 46debcab
+            widget: string
+          - hint: 'Original text: contact, key: 38b72420'
+            label: Text
+            name: 38b72420
+            widget: string
+          - hint: 'Original text: us, key: e9e'
+            label: Text
+            name: e9e
+            widget: string
+          - hint: 'Original text: About Us, key: 645efc51'
+            label: Text
+            name: 645efc51
+            widget: string
+          - hint: 'Original text: Solutions, key: 3c2e81fa'
+            label: Text
+            name: 3c2e81fa
+            widget: string
+          - hint: 'Original text: Platform, key: 7397cc93'
+            label: Text
+            name: 7397cc93
+            widget: string
+          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
+            label: Text
+            name: '-3fbde6f6'
+            widget: string
+          - hint: 'Original text: Terms of Use, key: 38622077'
+            label: Text
+            name: '38622077'
+            widget: string
+          - hint: 'Original text: Style Guide, key: -7aba473'
+            label: Text
+            name: '-7aba473'
+            widget: string
+          - hint: 'Original text: Headings, key: -3e9d592f'
+            label: Text
+            name: '-3e9d592f'
+            widget: string
+          - hint: 'Original text: All H1 Headings, key: -63ec17f7'
+            label: Text
+            name: '-63ec17f7'
+            widget: string
+          - hint: 'Original text: All H2 Headings, key: -6fa2a6d8'
+            label: Text
+            name: '-6fa2a6d8'
+            widget: string
+          - hint: 'Original text: All H3 Headings, key: -7b5935b9'
+            label: Text
+            name: '-7b5935b9'
+            widget: string
+          - hint: 'Original text: All H4 Headings, key: 78f03b66'
+            label: Text
+            name: 78f03b66
+            widget: string
+          - hint: 'Original text: All H5 Headings, key: 6d39ac85'
+            label: Text
+            name: 6d39ac85
+            widget: string
+          - hint: 'Original text: All H6 Headings, key: 61831da4'
+            label: Text
+            name: 61831da4
+            widget: string
+          - hint: 'Original text: SUPPORT, key: -43c1f451'
+            label: Text
+            name: '-43c1f451'
+            widget: string
+          - hint: 'Original text: Paragraph, key: -145e16b2'
+            label: Text
+            name: '-145e16b2'
+            widget: string
+          - hint: >-
+              Original text: Fonts are built with variable sizes that resize
+              with page width resize. Optimal readiability can also be enlarged
+              with screen resize. Semantic sections: Header, Subhead, Paragraph,
+              Bullets, ALT and Link tags will be globally styled to feed into
+              index/search registry system., key: 7d43b44
+            label: Text
+            name: 7d43b44
+            widget: text
+          - hint: 'Original text: Rich Text Block, key: -eea8682'
+            label: Text
+            name: '-eea8682'
+            widget: string
+          - hint: 'Original text: Rich Text H1 element (H1), key: -2c94607c'
+            label: Text
+            name: '-2c94607c'
+            widget: string
+          - hint: >-
+              Original text: The rich text element allows you to create and
+              format headings, paragraphs, blockquotes, images, and video all in
+              one place instead of having to add and format them individually.
+              Just double-click and easily create content. For dynamic content,
+              add a rich text field to any collection and then connect a rich
+              text element to that field in the settings panel. Voila!, key:
+              d7fe67e
+            label: Text
+            name: d7fe67e
+            widget: text
+          - hint: 'Original text: Rich Text H2 element (H2), key: -4ab696be'
+            label: Text
+            name: '-4ab696be'
+            widget: string
+          - hint: 'Original text: Rich Text H3 element (H3), key: -68d8cd00'
+            label: Text
+            name: '-68d8cd00'
+            widget: string
+          - hint: >-
+              Original text: A rich text element can be used with static or
+              dynamic content. For static content, just drop it into any page
+              and begin editing. For dynamic content, add a rich text field to
+              any collection and then connect a rich text element to that field
+              in the settings panel. Voila!, key: -a016b40
+            label: Text
+            name: '-a016b40'
+            widget: text
+          - hint: 'Original text: Rich Text H4 element (H4), key: 7904fcbe'
+            label: Text
+            name: 7904fcbe
+            widget: string
+          - hint: >-
+              Original text: Headings, paragraphs, blockquotes, figures, images,
+              and figure captions can all be styled after a class is added to
+              the rich text element using the "When inside of" nested selector
+              system., key: -43ba1153
+            label: Text
+            name: '-43ba1153'
+            widget: text
+          - hint: 'Original text: Rich Text H5 element (H5), key: 5ae2c67c'
+            label: Text
+            name: 5ae2c67c
+            widget: string
+          - hint: >-
+              Original text: Add a rich text field to any collection and then
+              connect a rich text element to that field in the settings panel. A
+              rich text element can be used with static or dynamic content. For
+              static content, just drop it into any page and begin editing. For
+              dynamic content, add a rich text field to any collection and then
+              connect a rich text element to that field in the settings panel.
+              Voila!, key: -60b5aec3
+            label: Text
+            name: '-60b5aec3'
+            widget: text
+          - hint: 'Original text: Rich Text H6 element (H6), key: 3cc0903a'
+            label: Text
+            name: 3cc0903a
+            widget: string
+          - hint: >-
+              Original text: For static content, just drop it into any page and
+              begin editing. For dynamic content, add a rich text field to any
+              collection and then connect a rich text element to that field in
+              the settings panel. Voila!, key: -48db17d3
+            label: Text
+            name: '-48db17d3'
+            widget: text
+          - hint: 'Original text: Item, key: 22ef33'
+            label: Text
+            name: 22ef33
+            widget: string
+          - hint: 'Original text: Block Quote, key: 3f3470e9'
+            label: Text
+            name: 3f3470e9
+            widget: string
+          - hint: >-
+              Original text: Block Quote. Just drop it into any page and begin
+              editing. For dynamic content, add a rich text field to any
+              collection and then connect a rich text element to that field in
+              the settings panel. Voila!, key: -581b6edc
+            label: Text
+            name: '-581b6edc'
+            widget: text
+          - hint: 'Original text: All links, key: 63e805a'
+            label: Text
+            name: 63e805a
+            widget: string
+          - hint: 'Original text: Default Text Link, key: 45d43fce'
+            label: Text
+            name: 45d43fce
+            widget: string
+          - hint: 'Original text: Button, key: 77471352'
+            label: Text
+            name: '77471352'
+            widget: string
+          - hint: 'Original text: Colors, key: 78a3a990'
+            label: Text
+            name: 78a3a990
+            widget: string
+          - hint: 'Original text: 439ec0, key: 5ba61f78'
+            label: Text
+            name: 5ba61f78
+            widget: string
+          - hint: 'Original text: 1b1464, key: 591985f2'
+            label: Text
+            name: 591985f2
+            widget: string
+          - hint: 'Original text: 4071ed, key: 5b7a2d75'
+            label: Text
+            name: 5b7a2d75
+            widget: string
+          - hint: 'Original text: 3f9fef, key: 5cbff9c1'
+            label: Text
+            name: 5cbff9c1
+            widget: string
+          - hint: 'Original text: 0b3680, key: 57659dcd'
+            label: Text
+            name: 57659dcd
+            widget: string
+          - hint: 'Original text: Logos, key: 4630008'
+            label: Text
+            name: '4630008'
+            widget: string
+          - hint: 'Original text: about meta5, key: -1887bb83'
+            label: Text
+            name: '-1887bb83'
+            widget: string
+          - hint: >-
+              Original text: Born in Silicon Valley through an exclusive
+              partnership with IBM, meta5 is uniquely engineered to integrate
+              today’s data and applications—and to work with the new interfaces
+              of the future., key: -41c98070
+            label: Text
+            name: '-41c98070'
+            widget: text
+          - hint: 'Original text: our history, key: 6e9923c0'
+            label: Text
+            name: 6e9923c0
+            widget: string
+          - hint: 'Original text: origin, key: -3c1e50da'
+            label: Text
+            name: '-3c1e50da'
+            widget: string
+          - hint: >-
+              Original text: meta5 was founded in 2000 when Relational
+              Development Systems (RDS), a long standing IBM Partner led by Jim
+              Kanzler, was selected to migrate IBM’s Intelligent Decision Server
+              (IDS) product to the Windows platform. RDS rebranded this
+              rock-solid IDS integration and automation technology—and the
+              company itself—as meta5., key: 60555b70
+            label: Text
+            name: 60555b70
+            widget: text
+          - hint: 'Original text: today, key: 6969f41'
+            label: Text
+            name: 6969f41
+            widget: string
+          - hint: >-
+              Original text: Today, meta5 supports businesses from small
+              start-ups to enterprise companies with our toolset, working with
+              data and applications across a broad range of platforms and
+              software., key: -8bd8e9d
+            label: Text
+            name: '-8bd8e9d'
+            widget: text
+          - hint: 'Original text: history, key: 373fe494'
+            label: Text
+            name: 373fe494
+            widget: string
+          - hint: >-
+              Original text: Steeped in our rich history, we continue to enhance
+              our technology to integrate with today’s ever-changing data and
+              business applications—and to deliver Business Intelligence systems
+              that others can only dream of., key: 76d45afe
+            label: Text
+            name: 76d45afe
+            widget: text
+          - hint: 'Original text: our leadership, key: 41d0d419'
+            label: Text
+            name: 41d0d419
+            widget: string
+          - hint: >-
+              Original text: Our team brings an unrivaled depth of experience,
+              and a history of nimble adaptability, to the meta5 platform., key:
+              78574cc
+            label: Text
+            name: 78574cc
+            widget: text
+          - hint: 'Original text: JIM KANZLER, key: 3a9b81e5'
+            label: Text
+            name: 3a9b81e5
+            widget: string
+          - hint: 'Original text: Operations and Client Relations , key: f60961'
+            label: Text
+            name: f60961
+            widget: string
+          - hint: >-
+              Original text: Operations and Client Relations 25 years’
+              experience in Business Intelligence Systems & Data Warehousing
+              Technologies for Fortune 500 companies Jim is a technology
+              executive and business leader with a proven record of success in
+              helping companies gain valuable insights into their challenges,
+              risks, and opportunities by building a culture of analytics and
+              data-driven decision making., key: -648392e3
+            label: Text
+            name: '-648392e3'
+            widget: text
+          - hint: 'Original text: DEBBIE KIEDERER, key: c707d7a'
+            label: Text
+            name: c707d7a
+            widget: string
+          - hint: 'Original text: Strategic Advisor, key: -6116c340'
+            label: Text
+            name: '-6116c340'
+            widget: string
+          - hint: "Original text: 30 years’ experience repositioning brands in the digital space with a strong global sensibility.\_\_Debbie is the founder of ChalkDust Consulting, a strategic online consulting practice with a client list of Fortune 500 companies in beauty, fashion, luxury retail, consumer electronics, marketing and media. , key: 27a76b03"
+            label: Text
+            name: 27a76b03
+            widget: text
+          - hint: 'Original text: ROBERT SCHAFFRATH, key: 2994538a'
+            label: Text
+            name: 2994538a
+            widget: string
+          - hint: 'Original text: VP Software, key: 36d30c6d'
+            label: Text
+            name: 36d30c6d
+            widget: string
+          - hint: >-
+              Original text: Platform Development and Support30 years’
+              experience in Software Development with, key: -70f6e22f
+            label: Text
+            name: '-70f6e22f'
+            widget: string
+          - hint: "Original text: Consumer Packaged Goods and Enterprise organizations\_Robert is responsible for all technical components of the meta5 core product, including our signature Excel and email automations. , key: 7af88ad2"
+            label: Text
+            name: 7af88ad2
+            widget: text
+          - hint: 'Original text: our users, key: -70a257cc'
+            label: Text
+            name: '-70a257cc'
+            widget: string
+          - hint: 'Original text: aeronautics, key: 43d7d946'
+            label: Text
+            name: 43d7d946
+            widget: string
+          - hint: 'Original text: Raytheon , key: -59152366'
+            label: Text
+            name: '-59152366'
+            widget: string
+          - hint: 'Original text: Sikorsky, key: 1d5824c9'
+            label: Text
+            name: 1d5824c9
+            widget: string
+          - hint: 'Original text: SEO/SEM/Technology, key: -2e40d06e'
+            label: Text
+            name: '-2e40d06e'
+            widget: string
+          - hint: 'Original text: Elite SEM , key: -59643f2e'
+            label: Text
+            name: '-59643f2e'
+            widget: string
+          - hint: 'Original text: IBM, key: 11a54'
+            label: Text
+            name: 11a54
+            widget: string
+          - hint: 'Original text: pharmaceutical, key: -73e0cbd'
+            label: Text
+            name: '-73e0cbd'
+            widget: string
+          - hint: 'Original text: Baxter Healthcare , key: -1387ac65'
+            label: Text
+            name: '-1387ac65'
+            widget: string
+          - hint: 'Original text: Bayer, key: 3cffa27'
+            label: Text
+            name: 3cffa27
+            widget: string
+          - hint: 'Original text: EDUCATION, key: -6b3c8878'
+            label: Text
+            name: '-6b3c8878'
+            widget: string
+          - hint: 'Original text: Purdue University , key: -1c9b1f87'
+            label: Text
+            name: '-1c9b1f87'
+            widget: string
+          - hint: 'Original text: University of Arizona , key: -54d5bc09'
+            label: Text
+            name: '-54d5bc09'
+            widget: string
+          - hint: 'Original text: University of Missouri, key: -41b1c890'
+            label: Text
+            name: '-41b1c890'
+            widget: string
+          - hint: 'Original text: Stanford University, key: 5067fb05'
+            label: Text
+            name: 5067fb05
+            widget: string
+          - hint: 'Original text: media, key: 62f6fe4'
+            label: Text
+            name: 62f6fe4
+            widget: string
+          - hint: 'Original text: CBS , key: 1f76cc'
+            label: Text
+            name: 1f76cc
+            widget: string
+          - hint: >-
+              Original text: Disney (Walt Disney Company) Meredith Corporation ,
+              key: -2f4fae06
+            label: Text
+            name: '-2f4fae06'
+            widget: string
+          - hint: 'Original text: Ogilvy & Mather, key: -20897c2f'
+            label: Text
+            name: '-20897c2f'
+            widget: string
+          - hint: 'Original text: FINANCIAL SERVICES, key: 1849da35'
+            label: Text
+            name: 1849da35
+            widget: string
+          - hint: 'Original text: American Express , key: -2807dd50'
+            label: Text
+            name: '-2807dd50'
+            widget: string
+          - hint: 'Original text: Chase Manhattan Bank Citigroup , key: -401f1612'
+            label: Text
+            name: '-401f1612'
+            widget: string
+          - hint: 'Original text: Morgan Stanley , key: -7e24c3d6'
+            label: Text
+            name: '-7e24c3d6'
+            widget: string
+          - hint: 'Original text: Paine Webber , key: -5c124c4c'
+            label: Text
+            name: '-5c124c4c'
+            widget: string
+          - hint: 'Original text: Standard Chartered Bank , key: 2e40852b'
+            label: Text
+            name: 2e40852b
+            widget: string
+          - hint: 'Original text: Wells Fargo, key: 58a01384'
+            label: Text
+            name: 58a01384
+            widget: string
+          - hint: 'Original text: GOVERNMENT, key: 398c45f1'
+            label: Text
+            name: 398c45f1
+            widget: string
+          - hint: 'Original text: Internal Revenue Service , key: 44533eb2'
+            label: Text
+            name: 44533eb2
+            widget: string
+          - hint: 'Original text: US Department of Health , key: 608eb547'
+            label: Text
+            name: 608eb547
+            widget: string
+          - hint: "Original text: and Human \_Services , key: 13d3cade"
+            label: Text
+            name: 13d3cade
+            widget: string
+          - hint: 'Original text: US Department of Labor , key: -61a1f273'
+            label: Text
+            name: '-61a1f273'
+            widget: string
+          - hint: 'Original text: US Navy , key: -2082c4f8'
+            label: Text
+            name: '-2082c4f8'
+            widget: string
+          - hint: "Original text: US Postal \_Service, key: b3f0408"
+            label: Text
+            name: b3f0408
+            widget: string
+          - hint: 'Original text: HEALTHCARE, key: 530cdb6d'
+            label: Text
+            name: 530cdb6d
+            widget: string
+          - hint: >-
+              Original text: Community Care Home Health Services , key:
+              -13049d39
+            label: Text
+            name: '-13049d39'
+            widget: string
+          - hint: >-
+              Original text: Gold Medal Home Health Jewish Community Center
+              Jewish Family & Community Services , key: 6d6d12b1
+            label: Text
+            name: 6d6d12b1
+            widget: string
+          - hint: >-
+              Original text: Stanford University Hospital Swedish Medical
+              Center, key: -56f8584c
+            label: Text
+            name: '-56f8584c'
+            widget: string
+          - hint: 'Original text: insurance, key: 45aa6da'
+            label: Text
+            name: 45aa6da
+            widget: string
+          - hint: 'Original text: Blue Cross Blue Shield , key: 56fa2577'
+            label: Text
+            name: 56fa2577
+            widget: string
+          - hint: 'Original text: John Hancock , key: 48d8e2cc'
+            label: Text
+            name: 48d8e2cc
+            widget: string
+          - hint: 'Original text: Kaiser Permanente , key: 490ccb96'
+            label: Text
+            name: 490ccb96
+            widget: string
+          - hint: 'Original text: Norwich Union | Aviva , key: -6ebbbb2'
+            label: Text
+            name: '-6ebbbb2'
+            widget: string
+          - hint: >-
+              Original text: Phoenix Life Insurance Co. Prudential , key:
+              -38be6431
+            label: Text
+            name: '-38be6431'
+            widget: string
+          - hint: 'Original text: RSA Insurance Group , key: -7c383839'
+            label: Text
+            name: '-7c383839'
+            widget: string
+          - hint: 'Original text: The Travelers , key: 472c44e3'
+            label: Text
+            name: 472c44e3
+            widget: string
+          - hint: 'Original text: United Health Group, key: 59c7ef78'
+            label: Text
+            name: 59c7ef78
+            widget: string
+          - hint: 'Original text: Process, key: 50c5b64f'
+            label: Text
+            name: 50c5b64f
+            widget: string
+          - hint: 'Original text: Ashland , key: -24cf5101'
+            label: Text
+            name: '-24cf5101'
+            widget: string
+          - hint: 'Original text: Chevron , key: 60849d65'
+            label: Text
+            name: 60849d65
+            widget: string
+          - hint: 'Original text: Philips Chemical , key: 3a769ddf'
+            label: Text
+            name: 3a769ddf
+            widget: string
+          - hint: 'Original text: Exxon Mobil Corporation , key: 5c62f931'
+            label: Text
+            name: 5c62f931
+            widget: string
+          - hint: 'Original text: Goodyear Tire , key: -5555d76e'
+            label: Text
+            name: '-5555d76e'
+            widget: string
+          - hint: 'Original text: U.S. Silica, key: 422bb13d'
+            label: Text
+            name: 422bb13d
+            widget: string
+          - hint: 'Original text:  Canadian Tire , key: 88b8fb'
+            label: Text
+            name: 88b8fb
+            widget: string
+          - hint: 'Original text: Clarks , key: -69e6c102'
+            label: Text
+            name: '-69e6c102'
+            widget: string
+          - hint: 'Original text: Duty Free Shops , key: 3113b18d'
+            label: Text
+            name: 3113b18d
+            widget: string
+          - hint: 'Original text: The Gap , key: 41a8f299'
+            label: Text
+            name: 41a8f299
+            widget: string
+          - hint: 'Original text: Lenscrafters , key: -18273dc4'
+            label: Text
+            name: '-18273dc4'
+            widget: string
+          - hint: 'Original text: Marshalls , key: 64b9533b'
+            label: Text
+            name: 64b9533b
+            widget: string
+          - hint: 'Original text: Safeway Sears , key: 6f36d52e'
+            label: Text
+            name: 6f36d52e
+            widget: string
+          - hint: 'Original text: Walgreens , key: 16cb974e'
+            label: Text
+            name: 16cb974e
+            widget: string
+          - hint: "Original text: WSS \_, key: 4f0f3b7"
+            label: Text
+            name: 4f0f3b7
+            widget: string
+          - hint: 'Original text: TELCO, key: 4c039a7'
+            label: Text
+            name: 4c039a7
+            widget: string
+          - hint: 'Original text: AT&T , key: 3babfdf'
+            label: Text
+            name: 3babfdf
+            widget: string
+          - hint: 'Original text: Bell South , key: 548a3db0'
+            label: Text
+            name: 548a3db0
+            widget: string
+          - hint: 'Original text: BT Group , key: 6bf1852f'
+            label: Text
+            name: 6bf1852f
+            widget: string
+          - hint: 'Original text: Verizon Communications, key: -3b294996'
+            label: Text
+            name: '-3b294996'
+            widget: string
+          - hint: 'Original text: TRANSPORTATION, key: -ef7c694'
+            label: Text
+            name: '-ef7c694'
+            widget: string
+          - hint: 'Original text: American President Lines , key: -5d712c7f'
+            label: Text
+            name: '-5d712c7f'
+            widget: string
+          - hint: 'Original text: Delta Air Lines, Inc. , key: -7e527c05'
+            label: Text
+            name: '-7e527c05'
+            widget: string
+          - hint: 'Original text: Marriot International, Inc. , key: -e3c796c'
+            label: Text
+            name: '-e3c796c'
+            widget: string
+          - hint: 'Original text: US Airways, key: 52d8180c'
+            label: Text
+            name: 52d8180c
+            widget: string
+          - hint: 'Original text: UTILITIES, key: -13e13916'
+            label: Text
+            name: '-13e13916'
+            widget: string
+          - hint: 'Original text: National Grid , key: 48f0e5ac'
+            label: Text
+            name: 48f0e5ac
+            widget: string
+          - hint: 'Original text: USA Southern California Edison, key: 62b8b061'
+            label: Text
+            name: 62b8b061
+            widget: string
+          - hint: 'Original text: meta5 works with familiar PC tools., key: -7deb99af'
+            label: Text
+            name: '-7deb99af'
+            widget: string
+          - hint: >-
+              Original text: Our platform seamlessly integrates with standard
+              Microsoft applications like Excel and Word. (In fact, Meta5
+              integrates Microsoft Office tools better than Microsoft does.) So
+              there's no need to learn other BI, query or reporting tools. ,
+              key: 12c4a702
+            label: Text
+            name: 12c4a702
+            widget: text
+          - hint: 'Original text: meta5 evolves with your business, key: -3d47ffb3'
+            label: Text
+            name: '-3d47ffb3'
+            widget: string
+          - hint: >-
+              Original text: We measure our success by how long it takes for you
+              to answer a new business question. By combining your strategic
+              data and tools, meta5 helps you rapidly respond to ever-changing
+              market conditions in real time—and can scale up or down as needed.
+              We can do this simply and easily because our solution uses little
+              or no code to solve complex business questions., key: 2c782e2d
+            label: Text
+            name: 2c782e2d
+            widget: text
+          - hint: 'Original text: meta5 works across industries, key: -403b5d31'
+            label: Text
+            name: '-403b5d31'
+            widget: string
+          - hint: >-
+              Original text: From Fortune 500 companies and enterprise clients
+              to small businesses and startups, meta5 works for everyone who
+              uses data across industries. Our platform is customizable so you
+              get answers tailored to your business, and your data, in an
+              instant., key: 224fa27b
+            label: Text
+            name: 224fa27b
+            widget: text
+          - hint: 'Original text: case studies, key: 2c7c7737'
+            label: Text
+            name: 2c7c7737
+            widget: string
+          - hint: 'Original text: Tab 1, key: 4cd4246'
+            label: Text
+            name: 4cd4246
+            widget: string
+          - hint: 'Original text: Tab 2, key: 4cd4247'
+            label: Text
+            name: 4cd4247
+            widget: string
+          - hint: 'Original text: Tab 3, key: 4cd4248'
+            label: Text
+            name: 4cd4248
+            widget: string
+          - hint: 'Original text: challenge, key: 539a7c63'
+            label: Text
+            name: 539a7c63
+            widget: string
+          - hint: 'Original text: solution, key: 58ed4d79'
+            label: Text
+            name: 58ed4d79
+            widget: string
+          - hint: 'Original text: meta5 platform, key: -4839383d'
+            label: Text
+            name: '-4839383d'
+            widget: string
+          - hint: >-
+              Original text: Bring data processing to your desktop with
+              meta5'seasy-to-use, highly functionable and visually programmable
+              interface. Its robust tools allow you to combine multiple and/or
+              incongruent data sources, transform data, and report and present
+              your results immediately in a finished, programmable Excel, Word,
+              or PDF report—all with industry-standard governance and security
+              features to keep your data secure., key: -1dd189f1
+            label: Text
+            name: '-1dd189f1'
+            widget: text
+          - hint: 'Original text: CAPSULE® Technology, key: 2b13526b'
+            label: Text
+            name: 2b13526b
+            widget: string
+          - hint: >-
+              Original text: meta5 is simply the best MS Excel integration and
+              MS Office automation tool in the industry. We eliminate the
+              cutting and pasting typically required to reconstruct your
+              sophisticated Excel and Word templates, and deliver the power of
+              macros without writing any code., key: 342a29b8
+            label: Text
+            name: 342a29b8
+            widget: text
+          - hint: 'Original text: Comprehensive Toolsets, key: 66d30675'
+            label: Text
+            name: 66d30675
+            widget: string
+          - hint: >-
+              Original text: meta5's 120+ tools or “icons” give you the power to
+              access, cleanse, transform, aggregate, distribute, and integrate
+              data across your enterprise. Our API creates an open data access
+              gateway, and our web portal gives you web-based access wherever
+              you are., key: -268cfe37
+            label: Text
+            name: '-268cfe37'
+            widget: text
+          - hint: 'Original text: Data Access , key: 6e3a24c6'
+            label: Text
+            name: 6e3a24c6
+            widget: string
+          - hint: >-
+              Original text: (Query tools, SQL querytools, Reporter tools, PC
+              Tools), key: 25db743
+            label: Text
+            name: 25db743
+            widget: string
+          - hint: 'Original text: Data transformation, key: -66755e1'
+            label: Text
+            name: '-66755e1'
+            widget: string
+          - hint: >-
+              Original text: (clean messy data, deletenull rows, etc ), key:
+              6a5b69fe
+            label: Text
+            name: 6a5b69fe
+            widget: string
+          - hint: 'Original text: data aggregation, key: 9a0136c'
+            label: Text
+            name: 9a0136c
+            widget: string
+          - hint: 'Original text: (sum, pivot, group data), key: 394b7bff'
+            label: Text
+            name: 394b7bff
+            widget: string
+          - hint: 'Original text: data distribution, key: -46c18cc6'
+            label: Text
+            name: '-46c18cc6'
+            widget: string
+          - hint: >-
+              Original text: (email, SMS, MMS, write to web, cloud or network
+              drives), key: 655bfa42
+            label: Text
+            name: 655bfa42
+            widget: string
+          - hint: 'Original text: pc integration, key: 48d4db27'
+            label: Text
+            name: 48d4db27
+            widget: string
+          - hint: 'Original text: (Excel, Word, PDF, CSV), key: -7a55618'
+            label: Text
+            name: '-7a55618'
+            widget: string
+          - hint: 'Original text: platform, key: 6fbd6873'
+            label: Text
+            name: 6fbd6873
+            widget: string
+          - hint: >-
+              Original text: The leading performance management platform driving
+              business process automation., key: -4aa35038
+            label: Text
+            name: '-4aa35038'
+            widget: string
+          - hint: 'Original text: Reporting, key: 6262e60e'
+            label: Text
+            name: 6262e60e
+            widget: string
+          - hint: 'Original text: Efficient and Flexible, key: fd0fdd3'
+            label: Text
+            name: fd0fdd3
+            widget: string
+          - hint: >-
+              Original text: meta5 unites all of your data assets within one
+              easy-to-use platform. It integrates with the programs and
+              applications you already use, without writing a single line of
+              code—driving more opportunities to leverage and gather insights
+              for business intelligence. , key: 6ae27492
+            label: Text
+            name: 6ae27492
+            widget: text
+          - hint: 'Original text: meta5 , key: -403a50b0'
+            label: Text
+            name: '-403a50b0'
+            widget: string
+          - hint: 'Original text: means data, key: 5fb39b3c'
+            label: Text
+            name: 5fb39b3c
+            widget: string
+          - hint: >-
+              Original text: Control any kind of data from anywhere, so you
+              spend less time managing it—and more time making strategic
+              decisions from it., key: -60e14a61
+            label: Text
+            name: '-60e14a61'
+            widget: text
+          - hint: >-
+              Original text: Automate the time-consuming transformation of data
+              needed for reporting and distribution, getting the job done in a
+              fraction of the time., key: 75ab7300
+            label: Text
+            name: 75ab7300
+            widget: text
+          - hint: >-
+              Original text: Create your own custom applications using our
+              simple drag-and-drop interface and our patented CAPSULE®
+              technology., key: -456876f7
+            label: Text
+            name: '-456876f7'
+            widget: text
+          - hint: >-
+              Original text: Share insights across teams to accelerate your
+              business KPIs, ROIs and bottom line from end-to-end., key: b62fc9b
+            label: Text
+            name: b62fc9b
+            widget: text
+          - hint: 'Original text: difference, key: 6704b53d'
+            label: Text
+            name: 6704b53d
+            widget: string
+          - hint: >-
+              Original text: meta5 makes the decision-making process easier,
+              more productive, cost-effective and scalable vs. traditional
+              stand-alone Business Intelligence (BI) tools. , key: 4d70b31b
+            label: Text
+            name: 4d70b31b
+            widget: text
+          - hint: 'Original text: Database Management, key: -d20c7f8'
+            label: Text
+            name: '-d20c7f8'
+            widget: string
+          - hint: >-
+              Original text: Link to any database or data source, using the
+              tools and documents you use every day., key: -3642c014
+            label: Text
+            name: '-3642c014'
+            widget: string
+          - hint: 'Original text: unlimited integrations, key: -32e70e02'
+            label: Text
+            name: '-32e70e02'
+            widget: string
+          - hint: >-
+              Original text: Create unlimited integrations with virtually every
+              major business application., key: 5c2fecce
+            label: Text
+            name: 5c2fecce
+            widget: string
+          - hint: 'Original text: Custom CAPSULEs, key: -593dc04b'
+            label: Text
+            name: '-593dc04b'
+            widget: string
+          - hint: >-
+              Original text: Combine meta5's tools into custom applications that
+              can be shared with your team., key: b47c61b
+            label: Text
+            name: b47c61b
+            widget: string
+          - hint: 'Original text: Real Time Process Flows, key: 7ef70583'
+            label: Text
+            name: 7ef70583
+            widget: string
+          - hint: "Original text: Update and link dynamic data as it happens within your existing infrastructure.\_, key: -3aced4f3"
+            label: Text
+            name: '-3aced4f3'
+            widget: string
+          - hint: 'Original text: Distribution, key: -546c5d5c'
+            label: Text
+            name: '-546c5d5c'
+            widget: string
+          - hint: >-
+              Original text: Write reports or results to databases,
+              applications, network drives, email platforms, cloud repositories,
+              or notify team members via text or SMS., key: -1d3ceaa4
+            label: Text
+            name: '-1d3ceaa4'
+            widget: text
+          - hint: 'Original text: meta5 Integrates With, key: -4f23a48c'
+            label: Text
+            name: '-4f23a48c'
+            widget: string
+          - hint: 'Original text: Microsoft Excel, key: -7ec48b3b'
+            label: Text
+            name: '-7ec48b3b'
+            widget: string
+          - hint: 'Original text: PDF / Document Management, key: -3c316dd7'
+            label: Text
+            name: '-3c316dd7'
+            widget: string
+          - hint: 'Original text: SQL / Relational Database, key: 27359ff1'
+            label: Text
+            name: 27359ff1
+            widget: string
+          - hint: "Original text: REST\_/ JSON APIs, key: 8c72474"
+            label: Text
+            name: 8c72474
+            widget: string
+          - hint: 'Original text: Collaboration / Logins, key: 6c62def6'
+            label: Text
+            name: 6c62def6
+            widget: string
+          - hint: 'Original text: Email Notifications, key: -2a0574dc'
+            label: Text
+            name: '-2a0574dc'
+            widget: string
+          - hint: 'Original text: SMS / IOT, key: -4f2f412a'
+            label: Text
+            name: '-4f2f412a'
+            widget: string
+          - hint: 'Original text: + we can customize any endpoint, key: 7fa4a3b3'
+            label: Text
+            name: 7fa4a3b3
+            widget: string
+          - hint: 'Original text: Security, key: 3c6cdb60'
+            label: Text
+            name: 3c6cdb60
+            widget: string
+          - hint: >-
+              Original text: Enjoy Enterprise-grade security that meets or
+              exceeds all compliance requirements., key: -2e3a4817
+            label: Text
+            name: '-2e3a4817'
+            widget: string
+          - hint: 'Original text: Support, key: -b54e851'
+            label: Text
+            name: '-b54e851'
+            widget: string
+          - hint: >-
+              Original text: Take advantage of our training, database design and
+              application development services., key: -6a78c808
+            label: Text
+            name: '-6a78c808'
+            widget: string
+          - hint: 'Original text: users, key: 6a68e08'
+            label: Text
+            name: 6a68e08
+            widget: string
+          - hint: >-
+              Original text: From Fortune 500 companies and enterprise clients
+              to small businesses and startups, meta5 , key: -7e683e20
+            label: Text
+            name: '-7e683e20'
+            widget: string
+          - hint: >-
+              Original text: works for everyone who uses data—and we've worked
+              with them all., key: -5e27d5b2
+            label: Text
+            name: '-5e27d5b2'
+            widget: string
+          - hint: 'Original text: More About Us, key: -50d23f64'
+            label: Text
+            name: '-50d23f64'
+            widget: string
+          - hint: 'Original text: intro copy, key: 47715ca9'
+            label: Text
+            name: 47715ca9
+            widget: string
+          - hint: 'Original text: copy here, key: 564171bb'
+            label: Text
+            name: 564171bb
+            widget: string
+          - hint: 'Original text: this is demo, key: 3b07f797'
+            label: Text
+            name: 3b07f797
+            widget: string
+          - hint: 'Original text: we can remove, key: 32bd1366'
+            label: Text
+            name: 32bd1366
+            widget: string
+          - hint: 'Original text: welcome to meta5, key: -47cf4817'
+            label: Text
+            name: '-47cf4817'
+            widget: string
+          - hint: 'Original text: the meta5 process, key: 19b76fb0'
+            label: Text
+            name: 19b76fb0
+            widget: string
+          - hint: 'Original text: strategy, key: 6a8fa373'
+            label: Text
+            name: 6a8fa373
+            widget: string
+          - hint: 'Original text: time, key: 3652cd'
+            label: Text
+            name: 3652cd
+            widget: string
+          - hint: 'Original text: simple, key: -35c7ce4e'
+            label: Text
+            name: '-35c7ce4e'
+            widget: string
+          - hint: 'Original text: insight, key: 74a93b98'
+            label: Text
+            name: 74a93b98
+            widget: string
+          - hint: 'Original text: need image here, key: 16f86d5f'
+            label: Text
+            name: 16f86d5f
+            widget: string
+          - hint: 'Original text: Unlimited Integregations, key: 112a7560'
+            label: Text
+            name: 112a7560
+            widget: string
+          - hint: 'Original text: headline and content copy needed , key: af7b91c'
+            label: Text
+            name: af7b91c
+            widget: string
+          - hint: 'Original text: the meta5 user, key: -20a4f5d6'
+            label: Text
+            name: '-20a4f5d6'
+            widget: string
+          - hint: 'Original text: more about us, key: 7bb4307c'
+            label: Text
+            name: 7bb4307c
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: /about, key: 55b8e8be'
+            label: Link
+            name: 55b8e8be
+            widget: string
+          - hint: 'Original link: /solutions, key: -61c7d935'
+            label: Link
+            name: '-61c7d935'
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: mailto:‍info@meta5.com , key: 5247924a'
+            label: Link
+            name: 5247924a
+            widget: string
+          - hint: 'Original link: tel:631-587-6800910, key: -3e3436db'
+            label: Link
+            name: '-3e3436db'
+            widget: string
+          - hint: 'Original link: mailto:sales@meta5.com , key: -6ba93d27'
+            label: Link
+            name: '-6ba93d27'
+            widget: string
+          - hint: 'Original link: tel:631-587-6800911, key: -3e3436da'
+            label: Link
+            name: '-3e3436da'
+            widget: string
+          - hint: 'Original link: mailto:tech@meta5.com , key: 5f9735ff'
+            label: Link
+            name: 5f9735ff
+            widget: string
+          - hint: 'Original link: tel:866-638-2555, key: -7ef87037'
+            label: Link
+            name: '-7ef87037'
+            widget: string
+          - hint: 'Original link: /platforms, key: 616b6b11'
+            label: Link
+            name: 616b6b11
+            widget: string
+          - hint: 'Original link: /assets/utility/privacy-policy., key: c5eceb7'
+            label: Link
+            name: c5eceb7
+            widget: string
+          - hint: 'Original link: mailto:support@instabi.com, key: -63857204'
+            label: Link
+            name: '-63857204'
+            widget: string
+          - hint: >-
+              Original link: https://www.linkedin.com/in/debbiekiederer/, key:
+              17568009
+            label: Link
+            name: '17568009'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: 4f138f7
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 18547aee
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5186a4b0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2fdf8384
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2776ed14
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i54e28a5c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i7c325e7a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5f08848c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7ba57ac4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i79eef0f0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 341e17b0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7f6dee5e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i5100741d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i7f5dbc2e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: d52a897
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7ccaf9cc'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 241ffa94
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-79eef0f0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '63483e44'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2d0a3921'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6612688f'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1ef44162'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3cd4d724
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '41e90212'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-65f8b317'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1559f381
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: b958f07
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2ffe3bbc'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-51557b17'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2c26723f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7b979519'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2f64ccb2'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '67710215'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1750556a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7738b52d'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-223c35d1'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 68729ac9
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 926fdaa
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2249a4cd'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 35e70d62
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-40b42df2'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 748210ea
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-686cf157'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2598147b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-40bb09c8'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 38caf0a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-31540ec5'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5de98b51
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-115a15d6'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
